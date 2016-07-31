@@ -1,0 +1,10 @@
+<h1><%= @library.name %></h1>
+
+<p>Floor Count: <%= @library.floor_count %></p>
+<p>Floor Area: <%= @library.floor_area %> </p>
+<%= button_to "Delete", @library, method: :delete %><br>
+<button><a href = "/libraries/<%=@library.id%>/edit">Edit</button><br>
+
+
+
+
