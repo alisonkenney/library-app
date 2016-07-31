@@ -1,7 +1,8 @@
 class LibrariesController < ApplicationController
-
+	before_action :logged_in?, only: [:create, :new]
 	def index
     	@libraries = Library.all
+    	current_user
   	end
 
   	def new
@@ -9,9 +10,7 @@ class LibrariesController < ApplicationController
   	end
 
   	def create
-    	library_params = params.require(:library).permit(:name, :floor_count, :floor_area)
     	@library = Library.create(library_params)
-
     	redirect_to "/libraries"
   	end
 
@@ -25,7 +24,6 @@ class LibrariesController < ApplicationController
 
 	def update
 		library = Library.find_by_id params[:id]
-		library_params = params.require(:library).permit(:name, :floor_count, :floor_area)
 		library.update_attributes(library_params)
 		redirect_to library_path(library)
 	end
@@ -34,6 +32,12 @@ class LibrariesController < ApplicationController
 		library = Library.find_by_id params[:id]
 		library.destroy
 		redirect_to libraries_path
+	end
+
+	private
+
+	def library_params
+		params.require(:library).permit(:name, :floor_count, :floor_area)		
 	end
 
 end
