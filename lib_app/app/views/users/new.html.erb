@@ -1,4 +1,4 @@
-Sign Up
+<h3>Sign Up</h3>
 
 <%= form_for @user do |f| %>
   <div>
@@ -15,3 +15,9 @@ Sign Up
   </div>
   <%= f.submit "Sign Up" %>
 <% end %>
+
+<br>
+
+<h3>Already Registered?</h3>
+
+<%= button_to 'Login', new_session_path, :method => :get %><br>

@@ -1,7 +1,7 @@
 class LibrariesController < ApplicationController
-	before_action :logged_in?, only: [:create, :new]
+	before_action :logged_in?, only: [:create, :new, :destroy, :edit]
 	def index
-    	@libraries = Library.all
+    	@libraries = Library.all.order(:name)
     	current_user
   	end
 

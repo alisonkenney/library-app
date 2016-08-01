@@ -3,9 +3,12 @@
     <h3><%= library.name %></h3>
     <% if @current_user %>
       <%= button_to "Join", library_users_path(library) %>
+      <%= button_to "Edit", edit_library_path(library), :method => :get %>
     <% end %>
   </div>
   <br>
 <% end %>
 
-<button><a href = "/libraries/new">Add a library</button><br>
+<%= button_to 'Add Library', new_library_path, :method => :get %><br>
+
+<%= button_to 'Logout', logout_path, method: :delete %>

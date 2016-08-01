@@ -6,4 +6,8 @@
   <% end %>
 </ul>
 
-<button><a href = "/libraries">Join more libraries!</button>
+<%= button_to 'Join More Libraries', libraries_path, :method => :get %><br>
+
+<%= button_to 'Add Library', new_library_path, :method => :get %><br>
+
+<%= button_to 'Logout', logout_path, method: :delete %>

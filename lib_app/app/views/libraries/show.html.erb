@@ -2,8 +2,11 @@
 
 <p>Floor Count: <%= @library.floor_count %></p>
 <p>Floor Area: <%= @library.floor_area %> </p>
-<%= button_to "Delete", @library, method: :delete %><br>
-<button><a href = "/libraries/<%=@library.id%>/edit">Edit</button><br>
+
+<%= button_to 'Edit', edit_library_path(@library), :method => :get %><br>
+<%= button_to 'Delete', @library, method: :delete %><br>
+<%= button_to 'View All Libraries', libraries_path, :method => :get %>
+
 
 
 

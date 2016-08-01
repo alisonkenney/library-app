@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   	post "/sessions", to: "sessions#create", as: "create_session"
 
+    delete "/sessions", to: "sessions#destroy", as: "logout"
+
   	get "/libraries", to: "libraries#index", as: "libraries"
 
   	get "/libraries/new", to: "libraries#new", as: "new_library"
@@ -30,5 +32,7 @@ Rails.application.routes.draw do
   	get "/users/:user_id/libraries", to: "library_users#index", as: "user_libraries"
 
   	post "/libraries/:library_id/users", to: "library_users#create", as: "library_users"
+
+    
 
 end

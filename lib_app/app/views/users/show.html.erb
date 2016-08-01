@@ -3,4 +3,8 @@
 </div>
 <br>
 
-<button><a href="/libraries">View and Join Libraries</button>
+<%= button_to 'View My Libraries', user_libraries_path(@user), :method => :get %><br>
+
+<%= button_to 'View All Libraries', libraries_path, :method => :get %><br>
+
+<%= button_to 'Logout', logout_path, method: :delete %>

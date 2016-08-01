@@ -10,3 +10,8 @@
   </div>
   <%= f.submit %>
 <% end %>
+<br>
+
+<%= button_to 'View All Libraries', libraries_path, :method => :get %><br>
+
+<%= button_to 'Logout', logout_path, method: :delete %>
